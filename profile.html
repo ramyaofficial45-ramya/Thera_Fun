@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>TheraFun - Kid Profile Creation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Specific styles for multi-section form layout on this page */
+        .form-section {
+            border: 1px solid #e0e0e0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            background-color: #f9f9f9; /* Slightly different background for sections */
+        }
+        .form-section h3 {
+            color: var(--therafun-blue);
+            border-bottom: 2px solid var(--accent-yellow);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.2em;
+        }
+        /* Style adjustments for better checkbox layout */
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 15px;
+            margin-top: 5px;
+        }
+        .checkbox-group label {
+            display: inline-flex;
+            align-items: center;
+            font-weight: normal;
+        }
+        .checkbox-group input[type="checkbox"] {
+            width: auto;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo-container">
+            <img src="therafun_logo.png" alt="Therafun Logo" class="logo">
+        </div>
+        <nav class="cta-nav">
+            <button class="nav-button primary-btn" id="buy-btn">Buy Subscription</button>
+            <button class="nav-button secondary-btn" onclick="window.location.href='subscription-plans.html'">View Plans</button>
+        </nav>
+    </header>
+
+    <div id="contact-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3>Ready to Subscribe?</h3>
+            <p>For instant access or customized plans, please contact us:</p>
+            <p class="contact-detail">📞 **Call Us:** <a href="tel:8754505020">8754505020</a></p>
+            <p class="contact-detail">📧 **Email:** <a href="mailto:therafun@gmail.com">therafun@gmail.com</a></p>
+            <p class="small-text">We'll get you set up with the perfect plan immediately!</p>
+        </div>
+    </div>
+
+    <div class="container" style="max-width: 800px;">
+        <h2><span class="accent-text">Kid Profile</span> Creation</h2>
+        <p style="margin-bottom: 30px; color: #666;">Provide detailed information to customize the best TheraFun experience.</p>
+        <form id="kidProfileForm">
+
+            <div class="form-section">
+                <h3>Basic Details</h3>
+                <div class="form-group">
+                    <label>Child's Full Name <span class="required">*</span></label>
+                    <input type="text" id="childName" required>
+                </div>
+                <div class="form-group"><label>Nickname</label><input type="text" id="nickname"></div>
+                <div class="form-group"><label>Age <span class="required">*</span></label><input type="number" id="age" required></div>
+                <div class="form-group"><label>Date of Birth <span class="required">*</span></label><input type="date" id="dob" required></div>
+                <div class="form-group"><label>Gender <span class="required">*</span></label><select id="gender" required><option value="">Select</option><option value="Male">Male</option><option value="Female">Female</option><option value="Other">Other</option></select></div>
+                <div class="form-group"><label>Parent/Guardian Name <span class="required">*</span></label><input type="text" id="parentName" required></div>
+                <div class="form-group"><label>Contact Number <span class="required">*</span></label><input type="tel" id="contact" required></div>
+                <div class="form-group"><label>Address <span class="required">*</span></label><textarea id="address" required></textarea></div>
+            </div>
+
+            <div class="form-section">
+                <h3>Medical & Therapy</h3>
+                <div class="form-group"><label>Diagnosis <span class="required">*</span></label><select id="diagnosis" required><option value="">Select</option><option>Autism Level 1</option><option>Autism Level 2</option><option>Autism Level 3</option><option>PDD-NOS</option><option>Asperger</option><option>Other</option></select></div>
+                <div class="form-group"><label>Comorbidities</label><div class="checkbox-group"><label><input type="checkbox" name="comorbidities" value="ADHD"> ADHD</label><label><input type="checkbox" name="comorbidities" value="Down Syndrome"> Down Syndrome</label><label><input type="checkbox" name="comorbidities" value="Epilepsy"> Epilepsy</label><label><input type="checkbox" name="comorbidities" value="ID"> Intellectual Disability</label><label><input type="checkbox" name="comorbidities" value="Anxiety"> Anxiety Disorder</label><label><input type="checkbox" name="comorbidities" value="OCD"> OCD</label><label><input type="checkbox" name="comorbidities" value="ODD"> ODD</label><label><input type="checkbox" name="comorbidities" value="Cerebral Palsy"> Cerebral Palsy</label><label><input type="checkbox" name="comorbidities" value="Dyslexia"> Dyslexia / Learning Disability</label><label><input type="checkbox" name="comorbidities" value="Sensory Processing Disorder"> Sensory Processing Disorder</label><label><input type="checkbox" name="comorbidities" value="Sleep Disorder"> Sleep Disorder</label><label><input type="checkbox" name="comorbidities" value="Depression"> Depression / Mood Disorder</label><label><input type="checkbox" name="comorbidities" value="GI Issues"> GI Issues</label></div></div>
+                <div class="form-group"><label>Allergies</label><div class="checkbox-group"><label><input type="checkbox" name="allergies" value="Milk"> Milk</label><label><input type="checkbox" name="allergies" value="Gluten"> Gluten</label><label><input type="checkbox" name="allergies" value="Nuts"> Nuts</label><label><input type="checkbox" name="allergies" value="Soy"> Soy</label><label><input type="checkbox" name="allergies" value="Eggs"> Eggs</label><label><input type="checkbox" name="allergies" value="Skin"> Skin Allergies</label><label><input type="checkbox" name="allergies" value="Respiratory"> Respiratory Issues</label><label><input type="checkbox" name="allergies" value="Vision"> Vision Problems</label><label><input type="checkbox" name="allergies" value="Hearing"> Hearing Problems</label><label><input type="checkbox" name="allergies" value="Chronic Illness"> Chronic Illness</label></div></div>
+                <div class="form-group"><label>Current Medications</label><input type="text" id="medications" placeholder="Name, Dosage, Schedule"></div>
+                <div class="form-group"><label>Therapy Type</label><div class="checkbox-group"><label><input type="checkbox" name="therapyType" value="ABA"> ABA</label><label><input type="checkbox" name="therapyType" value="Speech Therapy"> Speech Therapy</label><label><input type="checkbox" name="therapyType" value="Occupational Therapy"> Occupational Therapy</label><label><input type="checkbox" name="therapyType" value="Physiotherapy"> Physiotherapy</label><label><input type="checkbox" name="therapyType" value="Special Education"> Special Education</label><label><input type="checkbox" name="therapyType" value="Sensory Integration"> Sensory Integration</label><label><input type="checkbox" name="therapyType" value="Social Skills Training"> Social Skills Training</label><label><input type="checkbox" name="therapyType" value="Play Therapy"> Play Therapy</label><label><input type="checkbox" name="therapyType" value="Music Therapy"> Music Therapy</label><label><input type="checkbox" name="therapyType" value="Art Therapy"> Art Therapy</label><label><input type="checkbox" name="therapyType" value="CBT"> Behavioral Therapy (CBT)</label><label><input type="checkbox" name="therapyType" value="Hydrotherapy"> Hydrotherapy / Aquatic Therapy</label><label><input type="checkbox" name="therapyType" value="Animal Therapy"> Animal-Assisted Therapy</label></div></div>
+                <div class="form-group"><label>Assigned Therapist</label><input type="text" id="assignedTherapist" placeholder="Name / Role / Contact"></div>
+            </div>
+
+            <div class="form-section">
+                <h3>Behavioral & Sensory Profile</h3>
+                <div class="form-group"><label>Sensory Sensitivities</label><div class="checkbox-group"><label><input type="checkbox" name="sensory" value="Sound"> Sound</label><label><input type="checkbox" name="sensory" value="Light"> Light</label><label><input type="checkbox" name="sensory" value="Touch"> Touch</label><label><input type="checkbox" name="sensory" value="Smell"> Smell</label><label><input type="checkbox" name="sensory" value="Taste"> Taste</label><label><input type="checkbox" name="sensory" value="Colors"> Colors</label></div></div>
+                <div class="form-group"><label>Triggers</label><input type="text" id="triggers" placeholder="e.g., loud noise, crowd, yellow color"></div>
+                <div class="form-group"><label>Calming Strategies</label><div class="checkbox-group"><label><input type="checkbox" name="calming" value="Music"> Music</label><label><input type="checkbox" name="calming" value="Weighted Mat"> Weighted Mat</label><label><input type="checkbox" name="calming" value="Fidget Toy"> Fidget Toy</label><label><input type="checkbox" name="calming" value="Visuals"> Visuals</label><label><input type="checkbox" name="calming" value="Quiet Space"> Quiet Space</label></div></div>
+                <div class="form-group"><label>Likes</label><input type="text" id="likes" placeholder="Favorite games, toys, food, activities"></div>
+                <div class="form-group"><label>Dislikes</label><input type="text" id="dislikes" placeholder="What they avoid"></div>
+                <div class="form-group"><label>Behavior Patterns</label><div class="checkbox-group"><label><input type="checkbox" name="behavior" value="Repetitive Actions"> Repetitive Actions</label><label><input type="checkbox" name="behavior" value="Hyperactivity"> Hyperactivity</label><label><input type="checkbox" name="behavior" value="Meltdowns"> Meltdowns</label><label><input type="checkbox" name="behavior" value="Avoidance"> Avoidance</label><label><input type="checkbox" name="behavior" value="Aggression"> Aggression</label></div></div>
+            </div>
+
+            <div class="form-section">
+                <h3>Learning & Communication</h3>
+                <div class="form-group"><label>Preferred Mode of Communication</label><select id="communicationMode"><option value="Verbal">Verbal</option><option value="Gestures">Gestures</option><option value="Sign Language">Sign Language</option><option value="PECS">PECS</option><option value="AAC Device">AAC Device</option></select></div>
+                <div class="form-group"><label>Strengths</label><input type="text" id="strengths" placeholder="e.g., puzzles, memory, music, drawing"></div>
+                <div class="form-group"> <label>Areas Needing Support</label><div class="checkbox-group"><label><input type="checkbox" name="support" value="Focus"> Focus</label><label><input type="checkbox" name="support" value="Attention"> Attention</label><label><input type="checkbox" name="support" value="Academics"> Academics</label><label><input type="checkbox" name="support" value="Mobility"> Mobility</label><label><input type="checkbox" name="support" value="Emotional Regulation"> Emotional Regulation</label></div></div>
+            </div>
+
+            <div class="form-section">
+                <h3>Physical & Motor Skills</h3>
+                <div class="form-group"><label>Gross Motor</label><div class="checkbox-group"><label><input type="checkbox" name="grossMotor" value="Walking"> Walking</label><label><input type="checkbox" name="grossMotor" value="Running"> Running</label><label><input type="checkbox" name="grossMotor" value="Jumping"> Jumping</label><label><input type="checkbox" name="grossMotor" value="Climbing"> Climbing</label><label><input type="checkbox" name="grossMotor" value="Balancing"> Balancing</label></div></div>
+                <div class="form-group"><label>Fine Motor</label><div class="checkbox-group"><label><input type="checkbox" name="fineMotor" value="Writing"> Writing</label><label><input type="checkbox" name="fineMotor" value="Cutting"> Cutting</label><label><input type="checkbox" name="fineMotor" value="Buttoning"> Buttoning</label><label><input type="checkbox" name="fineMotor" value="Puzzles"> Puzzles</label><label><input type="checkbox" name="fineMotor" value="Tying Shoelaces"> Tying Shoelaces</label></div></div>
+                <div class="form-group"><label>Mobility Needs</label><select id="mobilityNeeds"><option value="None">None</option><option value="Walker">Walker</option><option value="Wheelchair">Wheelchair</option><option value="Therapy Support Mat">Therapy Support Mat</option><option value="Other">Other</option></select></div>
+            </div>
+
+            <div class="form-section">
+                <h3>TheraFun Customization</h3>
+                <div class="form-group"><label>Sound Preference</label><select id="soundPreference"><option value="Normal">Normal</option><option value="Low">Low</option><option value="Mute">Mute</option></select></div>
+                <div class="form-group"><label>Color Preference</label><input type="text" id="colorPreference" placeholder="Avoid colors like yellow, red etc."></div>
+                <div class="form-group"><label>Difficulty Level</label><select id="difficultyLevel"><option value="Easy">Easy</option><option value="Medium">Medium</option><option value="Hard">Hard</option></select></div>
+                <div class="form-group"><label>Reward System</label><input type="text" id="rewardSystem" placeholder="e.g., points, stars, stickers, music"></div>
+                <div class="form-group"><label>Session Duration</label><select id="sessionDuration"><option value="5-10 min">Short (5–10 min)</option><option value="15-20 min">Medium (15–20 min)</option><option value="30+ min">Long (30+ min)</option></select></div>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn login-btn" style="margin-top: 20px; width: auto; padding: 15px 50px;">Save Profile</button>
+            </div>
+        </form>
+    </div>
+    
+    <script src="script.js"></script>
+    <div id="popupMessage"></div>
+</body>
+</html>

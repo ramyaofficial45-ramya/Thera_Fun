@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>TheraFun - Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+    <header class="header">
+        <div class="logo-container">
+            <img src="therafun_logo.png" alt="Therafun Logo" class="logo">
+        </div>
+        <nav class="cta-nav">
+            <button class="nav-button primary-btn" id="buy-btn">Buy Subscription</button>
+            
+            <button class="nav-button secondary-btn" onclick="window.location.href='subscription-plans.html'">View Plans</button>
+        </nav>
+    </header>
+
+    <div id="contact-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3>Ready to Subscribe?</h3>
+            <p>For instant access or customized plans, please contact us:</p>
+            <p class="contact-detail">📞 **Call Us:** <a href="tel:8754505020">8754505020</a></p>
+            <p class="contact-detail">📧 **Email:** <a href="mailto:therafun@gmail.com">therafun@gmail.com</a></p>
+            <p class="small-text">We'll get you set up with the perfect plan immediately!</p>
+        </div>
+    </div>
+    
+    <div class="container login-box">
+        <h2>Welcome Back to <span class="accent-text">TheraFun</span></h2>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="loginEmail">Email <span class="required">*</span></label>
+                <input type="email" id="loginEmail" required>
+            </div>
+            <div class="form-group">
+                <label for="loginPassword">Password <span class="required">*</span></label>
+                <input type="password" id="loginPassword" required>
+            </div>
+            <div class="form-group">
+                <label for="loginRole">Role <span class="required">*</span></label>
+                <select id="loginRole" required>
+                    <option value="Therapist">Therapist</option>
+                    <option value="Parent-Guardian">Parent/Guardian</option>
+                </select>
+            </div>
+            <button type="submit" class="btn login-btn">Login</button>
+        </form>
+        <p class="switch-link">Don't have an account? <a href="register.html">**Register Here**</a></p>
+    </div>
+
+    <script src="script.js"></script> 
+</body>
+</html>

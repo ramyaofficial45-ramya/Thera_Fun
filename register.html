@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>TheraFun - Register</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo-container">
+            <img src="therafun_logo.png" alt="Therafun Logo" class="logo">
+        </div>
+        <nav class="cta-nav">
+            <button class="nav-button primary-btn" id="buy-btn">Buy Subscription</button>
+            <button class="nav-button secondary-btn" onclick="window.location.href='subscription-plans.html'">View Plans</button>
+        </nav>
+    </header>
+
+    <div id="contact-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3>Ready to Subscribe?</h3>
+            <p>For instant access or customized plans, please contact us:</p>
+            <p class="contact-detail">📞 **Call Us:** <a href="tel:8754505020">8754505020</a></p>
+            <p class="contact-detail">📧 **Email:** <a href="mailto:therafun@gmail.com">therafun@gmail.com</a></p>
+            <p class="small-text">We'll get you set up with the perfect plan immediately!</p>
+        </div>
+    </div>
+
+    <div class="container login-box">
+        <h2>Join <span class="accent-text">TheraFun</span> Today!</h2>
+        <form id="registerForm">
+            <div class="form-group">
+                <label>Full Name <span class="required">*</span></label>
+                <input type="text" id="regName" required>
+            </div>
+            <div class="form-group">
+                <label>Email <span class="required">*</span></label>
+                <input type="email" id="regEmail" required>
+            </div>
+            <div class="form-group">
+                <label>Phone Number <span class="required">*</span></label>
+                <input type="tel" id="regPhone" required>
+            </div>
+            <div class="form-group">
+                <label>Password <span class="required">*</span></label>
+                <input type="password" id="regPassword" required>
+            </div>
+            <div class="form-group">
+                <label>Confirm Password <span class="required">*</span></label>
+                <input type="password" id="regConfirmPassword" required>
+            </div>
+            <div class="form-group">
+                <label>Role <span class="required">*</span></label>
+                <select id="regRole" required>
+                    <option value="Therapist">Therapist</option>
+                    <option value="Parent-Guardian">Parent/Guardian</option>
+                </select>
+            </div>
+            <button type="submit" class="btn login-btn">Register</button>
+        </form>
+        <p class="switch-link">Already have an account? <a href="index.html">**Login Here**</a></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

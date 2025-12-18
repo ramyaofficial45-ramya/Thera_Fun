@@ -1,0 +1,231 @@
+/* --- Variables & Reset --- */
+:root {
+    --therafun-blue: #0033A0; /* Primary Brand Blue */
+    --accent-yellow: #FFC72C; /* Accent Yellow */
+    --light-bg: #F0F4F8; /* Light background for the body */
+    --card-bg: #FFFFFF; /* White card background */
+    --text-color: #333333;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: var(--light-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- Header & Navigation --- */
+.header {
+    background-color: var(--therafun-blue);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+}
+
+.logo-container img {
+    height: 40px; 
+    filter: brightness(0) invert(1); /* Makes the logo white */
+}
+
+.cta-nav .nav-button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 25px; /* Rounded buttons */
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.primary-btn {
+    background-color: var(--accent-yellow);
+    color: var(--therafun-blue);
+}
+
+.primary-btn:hover {
+    background-color: #FFD966;
+    box-shadow: 0 0 10px rgba(255, 199, 44, 0.7);
+}
+
+.secondary-btn {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.secondary-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* --- Form Container --- */
+.container {
+    max-width: 400px;
+    margin: 60px auto;
+    padding: 40px;
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+.login-box h2 {
+    font-size: 2em;
+    margin-bottom: 25px;
+    color: var(--therafun-blue);
+}
+
+.accent-text {
+    color: var(--accent-yellow);
+}
+
+/* --- Form Styling --- */
+.form-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #DDDDDD;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus, .form-group select:focus {
+    border-color: var(--therafun-blue);
+    outline: none;
+}
+
+.required {
+    color: #E74C3C; /* Red for required fields */
+}
+
+.btn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.login-btn {
+    background-color: var(--therafun-blue);
+    color: var(--light-bg);
+    margin-top: 10px;
+}
+
+.login-btn:hover {
+    background-color: #0044CC;
+}
+
+.switch-link {
+    margin-top: 20px;
+    font-size: 0.95em;
+}
+
+.switch-link a {
+    color: var(--therafun-blue);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* --- Modal/Pop-up Styling --- */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6); /* Dim background */
+}
+
+.modal-content {
+    background-color: var(--card-bg);
+    margin: 15% auto; /* Center the modal */
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%; 
+    max-width: 450px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-btn:hover, .close-btn:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content h3 {
+    color: var(--therafun-blue);
+    margin-bottom: 20px;
+}
+
+.contact-detail {
+    font-size: 1.1em;
+    margin: 10px 0;
+}
+
+.contact-detail a {
+    color: var(--accent-yellow);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.small-text {
+    margin-top: 15px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .header {
+        flex-direction: column;
+    }
+    .cta-nav {
+        margin-top: 10px;
+    }
+    .cta-nav .nav-button {
+        padding: 8px 15px;
+        margin: 5px;
+    }
+    .container {
+        margin: 30px auto;
+        padding: 25px;
+    }
+}
